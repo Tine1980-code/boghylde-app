@@ -1,0 +1,287 @@
+/* 
+ * Boghylde - Feminine & Sharp Design Override
+ * Dette stylesheet tilføjer et moderne, feminint og visuelt skarpt design
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* New Color Palette - Feminine & Bold */
+  --primary: #E91E63;
+  --primary-dark: #C2185B;
+  --secondary: #FF6B9D;
+  --accent: #FFD54F;
+  --terracotta: #D4917A;
+  --cream: #FFF9F5;
+  --blush: #FFE4E9;
+  --charcoal: #2D2D2D;
+  --soft-gray: #F5F5F5;
+}
+
+/* Override body and background */
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background: linear-gradient(135deg, #FFF9F5 0%, #FFE4E9 50%, #FFD4E5 100%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Typography overrides */
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: 'Playfair Display', serif !important;
+}
+
+/* Main container styling */
+#root > div {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circles */
+#root > div::before,
+#root > div::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(233, 30, 99, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root > div::before {
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  right: -150px;
+  animation: float 8s ease-in-out infinite;
+}
+
+#root > div::after {
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  left: -100px;
+  animation: float 10s ease-in-out infinite 2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+}
+
+/* Button redesign - Pink gradient with glow */
+button[class*="gradient"] {
+  background: linear-gradient(135deg, #E91E63 0%, #FF6B9D 100%) !important;
+  box-shadow: 0 4px 20px rgba(233, 30, 99, 0.3) !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+
+button[class*="gradient"]:hover {
+  box-shadow: 0 6px 30px rgba(233, 30, 99, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+
+button:active {
+  transform: scale(0.97) !important;
+}
+
+/* Glassmorphism cards */
+div[class*="bg-white"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Enhanced card hover effects */
+div[class*="rounded-"][class*="bg-"]:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 12px 40px rgba(233, 30, 99, 0.15) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Rating cards redesign */
+div[class*="from-amber"],
+div[class*="from-blue-5"] {
+  background: linear-gradient(135deg, #E91E63 0%, #FF6B9D 100%) !important;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3) !important;
+}
+
+/* App title gradient */
+h1[class*="text-"] {
+  background: linear-gradient(135deg, #E91E63 0%, #FF6B9D 50%, #D4917A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Search bar enhancement */
+input[type="text"],
+textarea {
+  border: 2px solid rgba(233, 30, 99, 0.2) !important;
+  transition: all 0.3s ease !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #E91E63 !important;
+  box-shadow: 0 0 0 4px rgba(233, 30, 99, 0.1) !important;
+  outline: none !important;
+}
+
+/* Stars in pink */
+svg[class*="fill-amber"] {
+  fill: #FFD54F !important;
+  color: #FFD54F !important;
+}
+
+/* Icons color override */
+svg[class*="text-rose"],
+svg[class*="text-purple"],
+svg[class*="text-blue"] {
+  color: #E91E63 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFE4E9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #E91E63 0%, #FF6B9D 100%);
+  border-radius: 10px;
+  border: 2px solid #FFE4E9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #C2185B 0%, #E91E63 100%);
+}
+
+/* Selection color */
+::selection {
+  background: #E91E63;
+  color: white;
+}
+
+/* Smooth animations */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Modal backdrop */
+div[class*="bg-black/50"] {
+  backdrop-filter: blur(10px) !important;
+  background: rgba(45, 45, 45, 0.6) !important;
+}
+
+/* Enhanced shadows for depth */
+div[class*="shadow-xl"] {
+  box-shadow: 
+    0 20px 60px rgba(233, 30, 99, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Add subtle texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E91E63' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+#root {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  h1[class*="text-6xl"] {
+    font-size: 3rem !important;
+  }
+  
+  #root > div::before,
+  #root > div::after {
+    width: 250px !important;
+    height: 250px !important;
+  }
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Stagger delays */
+.animate-fadeIn:nth-child(1) { animation-delay: 0.1s; }
+.animate-fadeIn:nth-child(2) { animation-delay: 0.2s; }
+.animate-fadeIn:nth-child(3) { animation-delay: 0.3s; }
+.animate-fadeIn:nth-child(4) { animation-delay: 0.4s; }
+
+/* Enhanced focus states */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(233, 30, 99, 0.3) !important;
+  outline-offset: 2px;
+}
+
+/* Pill badges */
+span[class*="rounded-full"] {
+  background: linear-gradient(135deg, #E91E63 0%, #FF6B9D 100%) !important;
+  box-shadow: 0 2px 10px rgba(233, 30, 99, 0.3) !important;
+}
+
+/* Book cover shadow enhancement */
+img[alt*="book" i],
+img[src*="thumbnail"] {
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+  border-radius: 8px !important;
+}
